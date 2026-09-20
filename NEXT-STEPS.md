@@ -15,13 +15,16 @@ Written 20 September 2026. Read this first if you come back to this cold.
 | Source | `~/Downloads/mermaid-app`, committed to git |
 | Listing copy | `marketing/listing.md`, every field inside Atlassian's limits |
 | Listing images | `marketing/out/`, all at required pixel sizes |
-| Vendor site | `docs/`, ready for GitHub Pages |
+| Vendor site | **Live** at https://akalbaari.github.io/mermaid-live-diagrams-confluence/ |
+| Repo | https://github.com/akalbaari/mermaid-live-diagrams-confluence |
 | Marketplace listing | **Does not exist.** Nobody can find the app |
 
 ## What is left, in order
 
-1. **Push to GitHub and turn on Pages.** Needs `gh auth login` once. Then the
-   privacy policy and support page have public URLs, which Atlassian requires.
+1. ~~Push to GitHub and turn on Pages.~~ **Done 20 Sep 2026.** Live URLs:
+   - https://akalbaari.github.io/mermaid-live-diagrams-confluence/
+   - https://akalbaari.github.io/mermaid-live-diagrams-confluence/privacy.html
+   - https://akalbaari.github.io/mermaid-live-diagrams-confluence/support.html
 2. **New Atlassian API token.** The old one was revoked, correctly. Make one at
    id.atlassian.com/manage-profile/security/api-tokens
 3. **Deploy to the production environment.** `forge deploy -e production`.

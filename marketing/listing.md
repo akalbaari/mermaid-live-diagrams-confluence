@@ -59,6 +59,17 @@ Your text stays in Confluence and is drawn in your own browser. No account, no A
 
 **Caption:** The same six diagrams in light and dark. Nothing in a diagram reaches the internet, so a label cannot smuggle in a tracking pixel.
 
+## Required URLs
+
+These go straight into the Marketplace listing form. All three are live.
+
+| Field | URL |
+|---|---|
+| Vendor / app page | https://akalbaari.github.io/mermaid-live-diagrams-confluence/ |
+| Privacy policy | https://akalbaari.github.io/mermaid-live-diagrams-confluence/privacy.html |
+| Support / documentation | https://akalbaari.github.io/mermaid-live-diagrams-confluence/support.html |
+| Source | https://github.com/akalbaari/mermaid-live-diagrams-confluence |
+
 ## Release summary
 
 First release. Live preview, 18 diagram types, dark mode.
