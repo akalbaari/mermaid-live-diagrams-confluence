@@ -163,9 +163,10 @@ forge deploy                   # deploys to the development environment
 forge install                  # pick Confluence, give your site URL
 ```
 
-`manifest.yml` currently carries `ari:cloud:ecosystem::app/REPLACE_WITH_YOUR_APP_ID`
-as a placeholder. `forge register` overwrites it. Do not commit a real app id
-to a public repo.
+`manifest.yml` carries the registered app id. It is an identifier, not a
+credential: deploying to it still requires an authenticated Forge session, so
+it is safe in a public repo. GitHub Pages on a free account needs the repo to
+be public anyway, which is how the vendor site under `docs/` is served.
 
 After that, `forge deploy && forge install --upgrade` for each change.
 
