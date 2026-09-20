@@ -1,0 +1,109 @@
+/* Atlassian design tokens (--ds-*) are injected by view.theme.enable().
+   Every one carries a fallback so the app still looks right in the moment
+   before the host theme lands, and in a plain browser during development. */
+
+:root {
+  --mmd-text: var(--ds-text, #172b4d);
+  --mmd-subtle: var(--ds-text-subtlest, #626f86);
+  --mmd-surface: var(--ds-surface, #ffffff);
+  --mmd-sunken: var(--ds-surface-sunken, #f7f8f9);
+  --mmd-border: var(--ds-border, #dfe1e6);
+  --mmd-danger-text: var(--ds-text-danger, #ae2e24);
+  --mmd-danger-bg: var(--ds-background-danger, #ffeceb);
+  --mmd-accent: var(--ds-border-focused, #0c66e4);
+  --mmd-radius: 3px;
+  --mmd-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Ubuntu, sans-serif;
+  --mmd-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas,
+    'Liberation Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--mmd-text);
+  font-family: var(--mmd-font);
+  font-size: 14px;
+  line-height: 1.43;
+  background: transparent;
+}
+
+/* --- diagram surface ------------------------------------------------ */
+
+.mmd-surface {
+  display: flex;
+  width: 100%;
+}
+
+.mmd-surface[data-align='left'] {
+  justify-content: flex-start;
+}
+.mmd-surface[data-align='center'] {
+  justify-content: center;
+}
+.mmd-surface[data-align='right'] {
+  justify-content: flex-end;
+}
+
+.mmd-figure {
+  width: 100%;
+  max-width: var(--mmd-max-width, 100%);
+}
+
+.mmd-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.mmd-caption {
+  margin: 8px 0 0;
+  color: var(--mmd-subtle);
+  font-size: 12px;
+  text-align: center;
+}
+
+/* --- messages ------------------------------------------------------- */
+
+.mmd-message {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--mmd-border);
+  border-radius: var(--mmd-radius);
+  background: var(--mmd-sunken);
+}
+
+.mmd-surface.is-error .mmd-message {
+  border-color: var(--ds-border-danger, #e2483d);
+  background: var(--mmd-danger-bg);
+}
+
+.mmd-message-title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.mmd-surface.is-error .mmd-message-title {
+  color: var(--mmd-danger-text);
+}
+
+.mmd-message-detail {
+  margin: 6px 0 0;
+  overflow-x: auto;
+  color: var(--mmd-subtle);
+  font-family: var(--mmd-mono);
+  font-size: 12px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.mmd-message-detail:empty {
+  display: none;
+}

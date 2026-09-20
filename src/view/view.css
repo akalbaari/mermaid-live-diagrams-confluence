@@ -1,0 +1,26 @@
+.mmd-root {
+  /* Forge sizes the macro iframe to its content, so the document keeps no
+     height of its own beyond the diagram and caption. */
+  padding: 2px 0;
+}
+
+.mmd-placeholder {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px dashed var(--mmd-border);
+  border-radius: var(--mmd-radius);
+  color: var(--mmd-subtle);
+  background: var(--mmd-sunken);
+  font-size: 13px;
+}
+
+.mmd-placeholder-mark {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--mmd-accent);
+  border-radius: 2px;
+}

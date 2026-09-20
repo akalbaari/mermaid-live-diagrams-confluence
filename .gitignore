@@ -1,0 +1,7 @@
+node_modules/
+static/
+.forge/
+*.log
+marketing/out/*.jpg
+test/harness.png
+.DS_Store

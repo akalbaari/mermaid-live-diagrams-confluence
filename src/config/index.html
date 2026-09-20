@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Edit Mermaid diagram</title>
+  </head>
+  <body>
+    <div class="cfg">
+      <div class="cfg-panes">
+        <section class="cfg-pane cfg-pane-editor" aria-label="Diagram source">
+          <div class="cfg-pane-head">
+            <label class="cfg-pane-title" for="source">Diagram source</label>
+            <div class="cfg-pane-actions">
+              <label class="cfg-visually-hidden" for="template">
+                Insert an example
+              </label>
+              <select id="template" class="cfg-select">
+                <option value="">Insert an example&hellip;</option>
+              </select>
+            </div>
+          </div>
+          <textarea
+            id="source"
+            class="cfg-source"
+            spellcheck="false"
+            autocapitalize="off"
+            autocomplete="off"
+            autocorrect="off"
+            placeholder="flowchart LR&#10;  A[Start] --> B{Ready?}&#10;  B -- yes --> C[Ship]&#10;  B -- no --> A"
+          ></textarea>
+          <p id="status" class="cfg-status" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="cfg-pane cfg-pane-preview" aria-label="Live preview">
+          <div class="cfg-pane-head">
+            <span class="cfg-pane-title">Preview</span>
+            <span id="spinner" class="cfg-spinner" hidden>Rendering&hellip;</span>
+          </div>
+          <div class="cfg-preview-scroll">
+            <div id="surface" class="mmd-surface" data-align="center"></div>
+            <p id="previewCaption" class="mmd-caption" hidden></p>
+          </div>
+        </section>
+      </div>
+
+      <div class="cfg-options">
+        <div class="cfg-field">
+          <label class="cfg-label" for="theme">Theme</label>
+          <select id="theme" class="cfg-select"></select>
+        </div>
+        <div class="cfg-field">
+          <label class="cfg-label" for="align">Alignment</label>
+          <select id="align" class="cfg-select"></select>
+        </div>
+        <div class="cfg-field">
+          <label class="cfg-label" for="maxWidth">Max width</label>
+          <input
+            id="maxWidth"
+            class="cfg-input"
+            type="number"
+            min="120"
+            max="4000"
+            step="10"
+            placeholder="Full width"
+          />
+        </div>
+        <div class="cfg-field cfg-field-grow">
+          <label class="cfg-label" for="caption">Caption</label>
+          <input
+            id="caption"
+            class="cfg-input"
+            type="text"
+            maxlength="200"
+            placeholder="Optional"
+          />
+        </div>
+      </div>
+
+      <footer class="cfg-footer">
+        <p class="cfg-hint">
+          The source is saved inside this macro, so editing the rest of the
+          page will not change what this diagram shows.
+        </p>
+        <div class="cfg-buttons">
+          <button id="cancel" type="button" class="cfg-button">Cancel</button>
+          <button id="save" type="button" class="cfg-button cfg-button-primary">
+            Save
+          </button>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

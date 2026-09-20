@@ -1,0 +1,24 @@
+{
+  "name": "mermaid-for-confluence",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:view && npm run build:config",
+    "build:view": "vite build --config vite.config.js --mode view",
+    "build:config": "vite build --config vite.config.js --mode config",
+    "build:harness": "vite build --config vite.config.js --mode harness",
+    "test": "npm run build:harness && node test/render-check.mjs",
+    "dev:config": "vite --config vite.config.js --mode config",
+    "build:preview": "vite build --config vite.config.js --mode preview"
+  },
+  "dependencies": {
+    "@forge/bridge": "^7.0.0",
+    "mermaid": "^12.0.0"
+  },
+  "devDependencies": {
+    "@forge/cli": "^14.0.0",
+    "playwright": "^1.63.0",
+    "vite": "^8.3.0"
+  }
+}

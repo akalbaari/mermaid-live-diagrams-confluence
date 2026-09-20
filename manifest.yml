@@ -1,0 +1,46 @@
+modules:
+  macro:
+    - key: mermaid-diagram
+      resource: view
+      title: Mermaid diagram
+      description: >-
+        Render Mermaid diagrams from text. The source is stored inside the
+        macro, so editing the page never breaks the diagram.
+      layout: block
+      config:
+        resource: config
+        title: Mermaid diagram
+        viewportSize: max
+        openOnInsert: true
+        parameters:
+          - identifier: source
+            type: string
+            indexing:
+              enabled: true
+          - identifier: theme
+            type: string
+          - identifier: align
+            type: string
+          - identifier: maxWidth
+            type: string
+          - identifier: caption
+            type: string
+            indexing:
+              enabled: true
+
+resources:
+  - key: view
+    path: static/view
+  - key: config
+    path: static/config
+
+permissions:
+  content:
+    # Mermaid emits a <style> block inside every SVG it renders.
+    styles:
+      - unsafe-inline
+
+app:
+  id: ari:cloud:ecosystem::app/9a59ac4a-d78d-4849-b744-b4192a4a5738
+  runtime:
+    name: nodejs22.x
